@@ -1,8 +1,9 @@
-import 'package:book_store/features/home_screen/view_model/componants/slider_widget.dart';
+import 'package:book_store/features/home_screen/view_model/componants/slider_section/slider_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../home_cubits/slider_cubit/slider_cubit.dart';
+import '../../home_cubits/slider_cubit/slider_cubit.dart';
 
 class SlidrsSection extends StatelessWidget {
   const SlidrsSection({super.key});
@@ -22,7 +23,7 @@ class SlidrsSection extends StatelessWidget {
         },
         itemCount:SliderCubit.get(context).sliders.length,
         separatorBuilder: (context, index) {
-          return SizedBox(width: 20,);
+          return SizedBox(width: 5.w,);
         },
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:book_store/core/utils/app_colors.dart';
-import 'package:book_store/features/home/view/home_screen.dart';
+import 'package:book_store/features/home_layout/view/home_layout.dart';
 import 'package:book_store/features/register/view_model/register_cubit/register_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -67,7 +67,7 @@ class RegisterFormSection extends StatelessWidget {
             BlocListener<RegisterCubit, RegisterState>(
               listener: (context, state) {
                 if(state is RegisterSuccessState){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeLayout(),));
                 }
               },
               child: CustomButton(

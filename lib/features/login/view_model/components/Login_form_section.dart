@@ -1,5 +1,5 @@
 import 'package:book_store/core/utils/app_colors.dart';
-import 'package:book_store/features/home/view/home_screen.dart';
+import 'package:book_store/features/home_layout/view/home_layout.dart';
 import 'package:book_store/features/login/view_model/login_cubit/login_cubit.dart';
 import 'package:book_store/features/login/view_model/login_cubit/login_cubit.dart';
 import 'package:book_store/features/login/view_model/login_cubit/login_cubit.dart';
@@ -50,7 +50,7 @@ class LoginFormSection extends StatelessWidget {
             BlocListener<LoginCubit, LoginState>(
               listener: (context, state) {
                 if(state is LoginSuccessState){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeLayout(),));
                 }
               },
               child: CustomButton(

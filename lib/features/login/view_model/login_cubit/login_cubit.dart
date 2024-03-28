@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
+import '../../../../core/services/local/shared_helper.dart';
+import '../../../../core/services/local/shared_keys.dart';
 import '../../../../core/services/network/dio_helper.dart';
 import '../../../../core/services/network/end_points.dart';
 
@@ -26,6 +28,8 @@ class LoginCubit extends Cubit<LoginState> {
         'password': passwordController.text,
       },
     ).then((value) {
+      SharedPreference.setData(key: SharedPreferenceKey.token, value: value.data['data']['token']);
+
       print(value.data);
       emit(LoginSuccessState());
     }).catchError((error) {
