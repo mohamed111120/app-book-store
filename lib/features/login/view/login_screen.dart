@@ -5,6 +5,7 @@ import 'package:book_store/features/register/view/register_screen.dart';
 import 'package:book_store/features/register/view_model/components/register_form_section.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/utils/Navigator.dart';
 import '../../../core/utils/app_images.dart';
 import '../../../core/utils/widgets/custom_text.dart';
 
@@ -47,11 +48,8 @@ class LoginScreen extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(
-                          builder: (context) {
-                            return RegisterScreen();
-                          },
-                        ));
+                        CustomNavigator.pushAndRemoveUntil(context, RegisterScreen());
+
                       },
                       child: CustomText(
                         text: 'register',

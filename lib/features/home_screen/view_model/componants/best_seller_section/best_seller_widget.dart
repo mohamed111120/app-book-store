@@ -1,8 +1,9 @@
 import 'package:book_store/core/utils/widgets/custom_text.dart';
-import 'package:book_store/features/home_screen/model/best_seller_model/best_Seller_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../model/all_prodacts_model/all_products_model.dart';
 
 class BestSellerWidget extends StatelessWidget {
   const BestSellerWidget({super.key, required this.product});
@@ -55,8 +56,9 @@ class BestSellerWidget extends StatelessWidget {
             height: 10.h,
           ),
           CustomText(
+            maxLines: 2,
             text: product.name ?? '',
-            fontSize: 8.sp,
+            fontSize: 12.sp,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
           ),

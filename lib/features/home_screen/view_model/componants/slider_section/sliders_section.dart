@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../home_cubits/slider_cubit/slider_cubit.dart';
 
-class SlidrsSection extends StatelessWidget {
-  const SlidrsSection({super.key});
+class SlidersSection extends StatelessWidget {
+  const SlidersSection({super.key});
 
   @override
   Widget build(BuildContext context) {

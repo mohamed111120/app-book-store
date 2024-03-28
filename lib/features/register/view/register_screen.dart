@@ -1,5 +1,7 @@
 import 'package:book_store/core/theme/theme_cubit/theme_cubit.dart';
+import 'package:book_store/core/utils/Navigator.dart';
 import 'package:book_store/core/utils/app_colors.dart';
+import 'package:book_store/features/home_screen/view/home_screen.dart';
 import 'package:book_store/features/login/view/login_screen.dart';
 import 'package:book_store/features/register/view_model/components/register_form_section.dart';
 import 'package:flutter/material.dart';
@@ -44,11 +46,7 @@ class RegisterScreen extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(
-                          builder: (context) {
-                            return LoginScreen();
-                          },
-                        ));
+                        CustomNavigator.pushAndRemoveUntil(context, LoginScreen());
                       },
                       child: CustomText(
                         text: 'Login',

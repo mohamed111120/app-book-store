@@ -16,12 +16,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'bloc_observer.dart';
 import 'features/home_screen/view_model/home_cubits/categories_cubit/categories_cubit.dart';
+import 'features/home_screen/view_model/home_cubits/new_arrivals_cubit/new_arrivals_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DioHelper.initDioHelper();
   await SharedPreference.initSharedPreference();
   Bloc.observer = MyBlocObserver();
+  SharedPreference.removeData(key: SharedPreferenceKey.token);
   runApp(const MyApp());
 }
 
@@ -40,9 +42,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => SliderCubit(),),
         BlocProvider(create: (context) => BestSellerCubit(),),
         BlocProvider(create: (context) => CategoriesCubit(),),
-
-
-
+        BlocProvider(create: (context) => NewArrivalsCubit(),),
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {

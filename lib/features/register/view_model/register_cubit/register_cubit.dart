@@ -33,6 +33,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     ).then((value) {
       print(value.data);
       emit(RegisterSuccessState());
+      SharedPreference.setData(key: SharedPreferenceKey.name, value: value.data['data']['user']['name']);
     }).catchError((error) {
       if (error is DioException) {
         print(error.response!.data);
