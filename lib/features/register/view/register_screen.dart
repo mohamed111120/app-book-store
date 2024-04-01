@@ -1,5 +1,5 @@
 import 'package:book_store/core/theme/theme_cubit/theme_cubit.dart';
-import 'package:book_store/core/utils/Navigator.dart';
+import 'package:book_store/core/utils/custom_navigator.dart';
 import 'package:book_store/core/utils/app_colors.dart';
 import 'package:book_store/features/home_screen/view/home_screen.dart';
 import 'package:book_store/features/login/view/login_screen.dart';

@@ -8,7 +8,7 @@ import 'package:book_store/features/register/view_model/register_cubit/register_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/utils/Navigator.dart';
+import '../../../../core/utils/custom_navigator.dart';
 import '../../../../core/utils/widgets/custom_button.dart';
 import '../../../../core/utils/widgets/custom_text_form_field.dart';
 

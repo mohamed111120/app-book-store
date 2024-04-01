@@ -10,6 +10,7 @@ import 'package:book_store/features/home_screen/view_model/home_cubits/slider_cu
 import 'package:book_store/features/login/view_model/login_cubit/login_cubit.dart';
 import 'package:book_store/features/register/view/register_screen.dart';
 import 'package:book_store/features/register/view_model/register_cubit/register_cubit.dart';
+import 'package:book_store/features/single_category/view_model/single_category_cubit/single_category_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,7 +24,7 @@ void main() async {
   await DioHelper.initDioHelper();
   await SharedPreference.initSharedPreference();
   Bloc.observer = MyBlocObserver();
-  SharedPreference.removeData(key: SharedPreferenceKey.token);
+  // SharedPreference.removeData(key: SharedPreferenceKey.token);
   runApp(const MyApp());
 }
 
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => BestSellerCubit(),),
         BlocProvider(create: (context) => CategoriesCubit(),),
         BlocProvider(create: (context) => NewArrivalsCubit(),),
+        BlocProvider(create: (context) => SingleCategoryCubit(),),
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {

@@ -15,16 +15,25 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment:CrossAxisAlignment.start,
         children: [
-          CustomText(text: 'Hi ${SharedPreference.getData(key: SharedPreferenceKey.name)}'),
-          CustomText(text: 'What are you reading today? ',color: Colors.grey,),
+          CustomText(text: 'Hi ${SharedPreference.getData(key: SharedPreferenceKey.name)}',fontSize: 16.sp,),
+          CustomText(text: 'What are you reading today? ',color: Colors.grey,fontSize: 16.sp,),
         ],
       ),
+      actions: [
+        CircleAvatar(
+          radius: 30,
+          backgroundImage: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJfPib7CWEiNiu18DRUk_FDdZR0KNSI4oz_g&s').image,
+        ),
+        SizedBox(
+          width: 15.w,
+        )
+      ],
     );
   }
 
   @override
   Size get preferredSize => Size(
         double.maxFinite,
-        70.h,
+        60.h,
       );
 }
