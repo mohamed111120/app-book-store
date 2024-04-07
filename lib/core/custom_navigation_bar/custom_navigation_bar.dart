@@ -1,9 +1,11 @@
-import 'package:book_store/features/home_screen/view/home_screen.dart';
+import 'package:book_store/core/custom_navigation_bar_cubit/custon_navigation_bar_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomNavigationBar extends StatelessWidget {
   const CustomNavigationBar({super.key});
+
+
   @override
   Widget build(BuildContext context) {
     return NavigationBarTheme(
@@ -11,9 +13,13 @@ class CustomNavigationBar extends StatelessWidget {
       child: NavigationBar(
         height: 60.h,
         backgroundColor: Colors.grey.shade100,
-        selectedIndex: 0,
-        onDestinationSelected: (value) {},
-        destinations: [
+        selectedIndex: CustomNavigationBarCubit.get(context).currentIndex,
+        onDestinationSelected: (value) {
+
+     CustomNavigationBarCubit.get(context).changeScreen(value);
+
+        },
+        destinations: const [
           NavigationDestination(
             icon: Icon(Icons.home),
             label: 'Home',

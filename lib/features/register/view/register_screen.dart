@@ -1,11 +1,8 @@
-import 'package:book_store/core/theme/theme_cubit/theme_cubit.dart';
 import 'package:book_store/core/utils/custom_navigator.dart';
 import 'package:book_store/core/utils/app_colors.dart';
-import 'package:book_store/features/home_screen/view/home_screen.dart';
 import 'package:book_store/features/login/view/login_screen.dart';
-import 'package:book_store/features/register/view_model/components/register_form_section.dart';
+import 'package:book_store/features/register/view/regisre_widgets/register_form_section.dart';
 import 'package:flutter/material.dart';
-
 import '../../../core/utils/app_images.dart';
 import '../../../core/utils/widgets/custom_text.dart';
 
@@ -26,39 +23,39 @@ class RegisterScreen extends StatelessWidget {
                   width: 200,
                   height: 200,
                 ),
-                CustomText(
+                const CustomText(
                   text: 'Join Us',
                   color: AppColor.primary,
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 Row(
                   children: [
-                    CustomText(
+                    const CustomText(
                       text: 'already have an account?',
                       color: Colors.grey,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     InkWell(
                       onTap: () {
-                        CustomNavigator.pushAndRemoveUntil(context, LoginScreen());
+                        CustomNavigator.pushAndRemoveUntil(context, const LoginScreen());
                       },
-                      child: CustomText(
+                      child: const CustomText(
                         text: 'Login',
                         color: AppColor.primary,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                RegisterFormSection(),
+                const RegisterFormSection(),
 
               ],
             ),

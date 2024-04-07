@@ -1,13 +1,10 @@
 import 'package:book_store/core/utils/app_colors.dart';
-import 'package:book_store/features/login/view/login_screen.dart';
-import 'package:book_store/features/login/view_model/components/Login_form_section.dart';
 import 'package:book_store/features/register/view/register_screen.dart';
-import 'package:book_store/features/register/view_model/components/register_form_section.dart';
 import 'package:flutter/material.dart';
-
 import '../../../core/utils/custom_navigator.dart';
 import '../../../core/utils/app_images.dart';
 import '../../../core/utils/widgets/custom_text.dart';
+import 'login_widgets/Login_form_section.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -28,13 +25,13 @@ class LoginScreen extends StatelessWidget {
                   height: 200,
                   fit: BoxFit.contain,
                 ),
-                CustomText(
+                const CustomText(
                   text: 'Login',
                   color: AppColor.primary,
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 Row(
@@ -43,25 +40,25 @@ class LoginScreen extends StatelessWidget {
                       text: 'you dont\'? have an account',
                       color: Colors.grey,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     InkWell(
                       onTap: () {
-                        CustomNavigator.pushAndRemoveUntil(context, RegisterScreen());
+                        CustomNavigator.pushAndRemoveUntil(context, const RegisterScreen());
 
                       },
-                      child: CustomText(
+                      child: const CustomText(
                         text: 'register',
                         color: AppColor.primary,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                LoginFormSection(),
+                const LoginFormSection(),
               ],
             ),
           ),

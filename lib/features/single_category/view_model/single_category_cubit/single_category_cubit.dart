@@ -1,12 +1,11 @@
 import 'dart:async';
-
-import 'package:bloc/bloc.dart';
 import 'package:book_store/core/services/network/dio_helper.dart';
 import 'package:book_store/core/services/network/end_points.dart';
 import 'package:book_store/features/single_category/model/single_category_model.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
+
 
 part 'single_category_state.dart';
 
@@ -16,23 +15,33 @@ class SingleCategoryCubit extends Cubit<SingleCategoryState> {
   static SingleCategoryCubit get(context) =>
       BlocProvider.of<SingleCategoryCubit>(context);
 
-  List<CategoryProducts> categoryProducts =[];
+  List<CategoryProducts>? categoryProducts =[] ;
 
-  Future<void> getCategory(id) async {
+  Future<void> getCategoryProducts(int id) async {
+    categoryProducts = [];
     emit(LoadingGetSingleCategory());
+    print(id);
     await DioHelper.get(
       url: '${EndPoints.categories}/$id',
     ).then((value) {
+        for (var i in value.data['data']['products']) {
+          categoryProducts?.add(
+            CategoryProducts.fromJson(i),
+          );
+        // print(i);
+        }
+        emit(SuccessGetSingleCategory());
+      },
+    ).catchError(
+      (e) {
+        if(e is DioException){
+          print('Dio Exception $e');
+        }
+        print('Exception $e');
 
-    for(var i in value.data['data']['products'])
-    {
-      categoryProducts.add(CategoryProducts.fromJson(i));
-    }
-
-      emit(SuccessGetSingleCategory());
-    },).catchError((e) {
-      emit(FailedGetSingleCategory());
-
-    },);
+        emit(FailedGetSingleCategory());
+      },
+    );
   }
 }
+

@@ -1,3 +1,4 @@
+import 'package:book_store/core/custom_navigation_bar_cubit/custon_navigation_bar_cubit.dart';
 import 'package:book_store/core/services/local/shared_helper.dart';
 import 'package:book_store/core/services/local/shared_keys.dart';
 import 'package:book_store/core/services/network/dio_helper.dart';
@@ -18,6 +19,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'bloc_observer.dart';
 import 'features/home_screen/view_model/home_cubits/categories_cubit/categories_cubit.dart';
 import 'features/home_screen/view_model/home_cubits/new_arrivals_cubit/new_arrivals_cubit.dart';
+import 'features/profile_screen/view_model/profile_cubit/profile_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,7 +36,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var token = SharedPreference.getData(key: SharedPreferenceKey.token) ;
-    print(token);
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => RegisterCubit(),),
@@ -45,6 +46,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => CategoriesCubit(),),
         BlocProvider(create: (context) => NewArrivalsCubit(),),
         BlocProvider(create: (context) => SingleCategoryCubit(),),
+        BlocProvider(create: (context) => CustomNavigationBarCubit(),),
+        BlocProvider(create: (context) => ProfileCubit(),),
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {
@@ -63,7 +66,7 @@ class MyApp extends StatelessWidget {
                 home:  child ,
               );
             },
-            child: token ==null ? RegisterScreen() :HomeLayout() ,
+            child: token ==null ? const RegisterScreen() :const HomeLayout() ,
           );
         },
       ),

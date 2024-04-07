@@ -7,6 +7,9 @@ class EndPoints{
   static const String bestSeller = 'products-bestseller';
   static const String categories = 'categories';
   static const String newArrivals = 'products-new-arrivals';
+  static const String showProfile = 'profile';
+  static const String updateProfile = 'update-profile';
+  static const String logout = 'logout';
 
 
 

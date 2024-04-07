@@ -1,8 +1,6 @@
-import 'package:bloc/bloc.dart';
 import 'package:book_store/core/services/network/dio_helper.dart';
 import 'package:book_store/core/services/network/end_points.dart';
 import 'package:book_store/features/home_screen/model/slider_model/slider_model.dart';
-import 'package:flutter/animation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
@@ -19,10 +17,6 @@ class SliderCubit extends Cubit<SliderState> {
     await DioHelper.get(
       url: EndPoints.sliders,
     ).then((value) {
-      for(var i in value.data['data']['sliders']){
-        sliders.add(Sliders.fromJson(i));
-      }
-
       for(var i in value.data['data']['sliders']){
         sliders.add(Sliders.fromJson(i));
       }

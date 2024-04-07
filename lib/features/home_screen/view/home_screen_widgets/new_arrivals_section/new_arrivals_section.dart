@@ -1,10 +1,8 @@
 import 'package:book_store/core/utils/widgets/custom_text.dart';
-import 'package:book_store/features/home_screen/view_model/componants/best_seller_section/best_seller_listview.dart';
-import 'package:book_store/features/home_screen/view_model/componants/best_seller_section/best_seller_widget.dart';
-import 'package:book_store/features/home_screen/view_model/componants/new_arrivals_section/new_arrivals_listview.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'new_arrivals_listview.dart';
 
 class NewArrivalsSection extends StatelessWidget {
   const NewArrivalsSection({super.key});
@@ -27,7 +25,7 @@ class NewArrivalsSection extends StatelessWidget {
             ],
           ),
         ),
-        NewArrivalsListView(),
+        const NewArrivalsListView(),
       ],
     );
   }

@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:book_store/core/services/network/dio_helper.dart';
 import 'package:book_store/core/services/network/end_points.dart';
 import 'package:book_store/features/home_screen/model/categories_model/categories_model.dart';

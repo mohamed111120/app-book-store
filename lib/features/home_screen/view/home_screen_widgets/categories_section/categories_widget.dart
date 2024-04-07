@@ -1,25 +1,19 @@
-import 'package:book_store/core/utils/custom_navigator.dart';
 import 'package:book_store/features/home_screen/model/categories_model/categories_model.dart';
-import 'package:book_store/features/single_category/view/single_category_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/widgets/custom_text.dart';
 
 class CategoriesWidget extends StatelessWidget {
   const CategoriesWidget({
-    super.key, required this.category,
+    super.key, required this.category,required this.onTap,
   });
 final Categories category;
+final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        CustomNavigator.push(context, SingleCategory(id: category.id??0,));
-      },
+      onTap: onTap,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 4.w),
         child: Column(

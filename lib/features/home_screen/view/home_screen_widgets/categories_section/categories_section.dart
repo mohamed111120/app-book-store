@@ -1,11 +1,11 @@
 
 
-import 'package:book_store/features/home_screen/view_model/componants/categories_section/categories_listview.dart';
 import 'package:book_store/features/home_screen/view_model/home_cubits/categories_cubit/categories_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/widgets/custom_text.dart';
+import 'categories_listview.dart';
 
 class CategoriesSection extends StatefulWidget {
   const CategoriesSection({super.key});
@@ -40,7 +40,7 @@ class _CategoriesSectionState extends State<CategoriesSection> {
             ],
           ),
         ),
-        CategoriesListView(),
+        const CategoriesListView(),
 
       ],
     );

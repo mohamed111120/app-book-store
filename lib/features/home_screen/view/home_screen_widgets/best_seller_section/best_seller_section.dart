@@ -1,13 +1,23 @@
 import 'package:book_store/core/utils/widgets/custom_text.dart';
-import 'package:book_store/features/home_screen/view_model/componants/best_seller_section/best_seller_listview.dart';
-import 'package:book_store/features/home_screen/view_model/componants/best_seller_section/best_seller_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class BestSellerSection extends StatelessWidget {
+import '../../../view_model/home_cubits/best_seller_cubit/best_seller_cubit.dart';
+import 'best_seller_listview.dart';
+
+class BestSellerSection extends StatefulWidget {
   const BestSellerSection({super.key});
 
+  @override
+  State<BestSellerSection> createState() => _BestSellerSectionState();
+}
+
+class _BestSellerSectionState extends State<BestSellerSection> {
+  @override
+  void initState() {
+    BestSellerCubit.get(context).getBestSellerProducts();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,7 +36,7 @@ class BestSellerSection extends StatelessWidget {
             ],
           ),
         ),
-        BestSellerListView(),
+        const BestSellerListView(),
       ],
     );
   }

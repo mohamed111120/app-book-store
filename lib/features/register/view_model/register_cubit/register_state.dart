@@ -7,4 +7,6 @@ final class RegisterInitial extends RegisterState {}
 final class RegisterLoadingState extends RegisterState {}
 final class RegisterSuccessState extends RegisterState {}
 final class RegisterFailedState extends RegisterState {}
+final class CahngePasswordIconState extends RegisterState {}
+final class CahngeConfirmPasswordIconState extends RegisterState {}
 

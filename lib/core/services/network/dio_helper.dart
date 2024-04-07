@@ -15,16 +15,19 @@ class DioHelper {
   static Future<Response> get({
     required String url,
     Map<String, dynamic>? query,
-    String? token,
+    bool? withToken,
   }) async {
     dio!.options.headers = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Authorization': 'Bearer ${SharedPreference.getData(key: SharedPreferenceKey.token)}',
+      if(withToken == true)
+        'Authorization': 'Bearer ${SharedPreference.getData(key: SharedPreferenceKey.token
+      )}',
     };
     return await dio!.get(
       url,
       queryParameters: query,
+
     );
   }
 
@@ -32,13 +35,15 @@ class DioHelper {
   static Future<Response> post({
     required String url,
     Map<String, dynamic>? query,
-    String? token,
-    required dynamic data ,
+     dynamic data ,
+    bool? withToken,
+
   }) async {
     dio!.options.headers = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Authorization': 'Bearer ${SharedPreference.getData(key: SharedPreferenceKey.token)}',
+    if(withToken == true)
+    'Authorization': 'Bearer ${SharedPreference.getData(key: SharedPreferenceKey.token)}',
     };
     return await dio!.post(
       url,
@@ -50,13 +55,14 @@ class DioHelper {
   static Future<Response> delete({
     required String url,
     Map<String, dynamic>? query,
-    String? token,
     required dynamic data ,
+    bool? withToken,
   }) async {
     dio!.options.headers = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Authorization': 'Bearer ${SharedPreference.getData(key: SharedPreferenceKey.token)}',
+      if(withToken == true)
+        'Authorization': 'Bearer ${SharedPreference.getData(key: SharedPreferenceKey.token)}',
     };
     return await dio!.delete(
       url,

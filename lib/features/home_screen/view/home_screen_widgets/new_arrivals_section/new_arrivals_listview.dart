@@ -1,8 +1,9 @@
-import 'package:book_store/features/home_screen/view_model/componants/new_arrivals_section/new_arrivals_widget.dart';
 import 'package:book_store/features/home_screen/view_model/home_cubits/new_arrivals_cubit/new_arrivals_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'new_arrivals_widget.dart';
 
 class NewArrivalsListView extends StatefulWidget {
   const NewArrivalsListView({super.key});
@@ -30,7 +31,7 @@ class _NewArrivalsListViewState extends State<NewArrivalsListView> {
               return NewArrivalsWidget(product: NewArrivalsCubit.get(context).newArrivalsList[index]);
             },
             separatorBuilder: (context, index) {
-              return SizedBox();
+              return const SizedBox();
             },
             itemCount: NewArrivalsCubit.get(context).newArrivalsList.length,
           ),
