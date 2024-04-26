@@ -9,9 +9,9 @@ class CustomTextFormField extends StatelessWidget {
     this.padding,
     this.prefixIcon,
     this.suffixIcon,
-    required this.lable,
+    required this.label,
     this.obscureText = false,
-    this.enabled = false,
+    this.enabled = true,
   }) : super(key: key);
   final TextEditingController controller;
   final String? Function(String?)? validator;
@@ -21,7 +21,7 @@ class CustomTextFormField extends StatelessWidget {
 
   final Widget? prefixIcon;
   final Widget? suffixIcon;
-  final String lable;
+  final String label;
   final bool obscureText;
 
   @override
@@ -38,7 +38,7 @@ class CustomTextFormField extends StatelessWidget {
           suffixIcon: suffixIcon,
           prefixIconColor: AppColor.primary,
           suffixIconColor: AppColor.primary,
-          label: Text(lable),
+          label: Text(label),
           labelStyle: const TextStyle(color: AppColor.primary),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),

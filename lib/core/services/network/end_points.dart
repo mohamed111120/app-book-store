@@ -10,6 +10,9 @@ class EndPoints{
   static const String showProfile = 'profile';
   static const String updateProfile = 'update-profile';
   static const String logout = 'logout';
+  static const String books = 'products';
+  static const String wishlist = 'wishlist';
+  static const String addToWishlist = 'add-to-wishlist';
 
 
 

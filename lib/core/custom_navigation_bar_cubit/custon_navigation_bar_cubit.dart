@@ -1,7 +1,9 @@
-import 'package:book_store/features/home_screen/view/home_screen.dart';
-import 'package:book_store/features/profile_screen/view/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../features/books/view/books_screen.dart';
+import '../../features/favorites/view/favorites_screen.dart';
+import '../../features/home/view/home_screen.dart';
+import '../../features/profile/view/profile_screen.dart';
 
 part 'custon_navigation_bar_state.dart';
 
@@ -12,8 +14,8 @@ class CustomNavigationBarCubit extends Cubit<CustomNavigationBarState> {
 
   List<Widget> Screens = [
     const HomeScreen(),
-    Container(),
-    Container(),
+    BooksScreen(),
+    FavoritesScreen(),
     Container(),
     const ProfileScreen(),
   ];

@@ -4,12 +4,11 @@ import 'package:book_store/core/utils/app_colors.dart';
 import 'package:book_store/core/utils/custom_navigator.dart';
 import 'package:book_store/core/utils/widgets/custom_text.dart';
 import 'package:book_store/features/login/view/login_screen.dart';
-import 'package:book_store/features/profile_screen/view_model/profile_cubit/profile_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import '../../../features/profile/view_model/profile_cubit/profile_cubit.dart';
 import '../../custom_navigation_bar_cubit/custon_navigation_bar_cubit.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {

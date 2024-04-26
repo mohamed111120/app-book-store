@@ -29,7 +29,7 @@ class LoginFormSection extends StatelessWidget {
                 Icons.email,
                 size: 30,
               ),
-              lable: 'Email',
+              label: 'Email',
             ),
             CustomTextFormField(
               controller: LoginCubit.get(context).passwordController,
@@ -42,7 +42,7 @@ class LoginFormSection extends StatelessWidget {
                 Icons.password,
                 size: 30,
               ),
-              lable: 'Password',
+              label: 'Password',
             ),
             BlocListener<LoginCubit, LoginState>(
               listener: (context, state) {

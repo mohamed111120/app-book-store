@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:book_store/core/services/network/dio_helper.dart';
 import 'package:book_store/core/services/network/end_points.dart';
-import 'package:book_store/features/single_category/model/single_category_model.dart';
+import 'package:book_store/features/home_layout/model/ProductsDetails.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,7 +15,7 @@ class SingleCategoryCubit extends Cubit<SingleCategoryState> {
   static SingleCategoryCubit get(context) =>
       BlocProvider.of<SingleCategoryCubit>(context);
 
-  List<CategoryProducts>? categoryProducts =[] ;
+  List<ProductsDetails>? categoryProducts =[] ;
 
   Future<void> getCategoryProducts(int id) async {
     categoryProducts = [];
@@ -26,7 +26,7 @@ class SingleCategoryCubit extends Cubit<SingleCategoryState> {
     ).then((value) {
         for (var i in value.data['data']['products']) {
           categoryProducts?.add(
-            CategoryProducts.fromJson(i),
+            ProductsDetails.fromJson(i),
           );
         // print(i);
         }

@@ -14,9 +14,8 @@ class HomeLayout extends StatelessWidget {
       builder: (context, state) {
         var cubit = CustomNavigationBarCubit.get(context);
         return Scaffold(
-          appBar: const CustomAppBar(),
-          body: cubit
-              .Screens[cubit.currentIndex],
+          appBar:  CustomAppBar(),
+          body: cubit.Screens[cubit.currentIndex],
           drawer: const CustomDrawer(),
           bottomNavigationBar: const CustomNavigationBar(),
         );

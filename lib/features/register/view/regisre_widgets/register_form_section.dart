@@ -33,7 +33,7 @@ class RegisterFormSection extends StatelessWidget {
                     Icons.person,
                     size: 30,
                   ),
-                  lable: 'Name',
+                  label: 'Name',
                 ),
                 CustomTextFormField(
                   controller: RegisterCubit.get(context).emailController,
@@ -42,7 +42,7 @@ class RegisterFormSection extends StatelessWidget {
                     Icons.email,
                     size: 30,
                   ),
-                  lable: 'Email',
+                  label: 'Email',
                   validator: (value) {
                     if (!RegExp(
                             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
@@ -74,7 +74,7 @@ class RegisterFormSection extends StatelessWidget {
                             size: 20,
                           ),
                   ),
-                  lable: 'Password',
+                  label: 'Password',
                   obscureText:
                       RegisterCubit.get(context).passwordIcon ? false : true,
                   validator: (value) {
@@ -128,7 +128,7 @@ class RegisterFormSection extends StatelessWidget {
                             size: 20,
                           ),
                   ),
-                  lable: 'Confirm Password',
+                  label: 'Confirm Password',
                 ),
                 BlocListener<RegisterCubit, RegisterState>(
                   listener: (context, state) {

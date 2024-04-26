@@ -1,7 +1,7 @@
-import 'package:book_store/features/single_category/model/single_category_model.dart';
-import 'package:book_store/features/single_category/view/single_category_widgets/single_category_widget.dart';
+import 'package:book_store/core/utils/widgets/product_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../home_layout/model/ProductsDetails.dart';
 import '../../view_model/single_category_cubit/single_category_cubit.dart';
 
 class SingleCategoryListView extends StatelessWidget {
@@ -16,10 +16,10 @@ class SingleCategoryListView extends StatelessWidget {
       builder: (context, state) {
         return ListView.builder(
             itemBuilder: (context, index) {
-              return SingleCategoryWidget(
-                categoryProducts: SingleCategoryCubit
+              return ProductWidget(
+                product: SingleCategoryCubit
                     .get(context)
-                    .categoryProducts?[index] ?? CategoryProducts(),
+                    .categoryProducts?[index] ?? ProductsDetails(),
 
               );
             },

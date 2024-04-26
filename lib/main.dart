@@ -6,8 +6,6 @@ import 'package:book_store/core/theme/dark_theme.dart';
 import 'package:book_store/core/theme/light_theme.dart';
 import 'package:book_store/core/theme/theme_cubit/theme_cubit.dart';
 import 'package:book_store/features/home_layout/view/home_layout.dart';
-import 'package:book_store/features/home_screen/view_model/home_cubits/best_seller_cubit/best_seller_cubit.dart';
-import 'package:book_store/features/home_screen/view_model/home_cubits/slider_cubit/slider_cubit.dart';
 import 'package:book_store/features/login/view_model/login_cubit/login_cubit.dart';
 import 'package:book_store/features/register/view/register_screen.dart';
 import 'package:book_store/features/register/view_model/register_cubit/register_cubit.dart';
@@ -15,11 +13,14 @@ import 'package:book_store/features/single_category/view_model/single_category_c
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'bloc_observer.dart';
-import 'features/home_screen/view_model/home_cubits/categories_cubit/categories_cubit.dart';
-import 'features/home_screen/view_model/home_cubits/new_arrivals_cubit/new_arrivals_cubit.dart';
-import 'features/profile_screen/view_model/profile_cubit/profile_cubit.dart';
+import 'features/books/view_model/books_cubit/books_cubit.dart';
+import 'features/favorites/view_model/favorites_cubit/favorites_cubit.dart';
+import 'features/home/view_model/home_cubits/best_seller_cubit/best_seller_cubit.dart';
+import 'features/home/view_model/home_cubits/categories_cubit/categories_cubit.dart';
+import 'features/home/view_model/home_cubits/new_arrivals_cubit/new_arrivals_cubit.dart';
+import 'features/home/view_model/home_cubits/slider_cubit/slider_cubit.dart';
+import 'features/profile/view_model/profile_cubit/profile_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,6 +49,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => SingleCategoryCubit(),),
         BlocProvider(create: (context) => CustomNavigationBarCubit(),),
         BlocProvider(create: (context) => ProfileCubit(),),
+        BlocProvider(create: (context) => BooksCubit(),),
+        BlocProvider(create: (context) => FavoritesCubit(),),
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {
