@@ -25,6 +25,7 @@ class FavoritesCubit extends Cubit<FavoritesState> {
             withToken: true)
         .then((value) {
       showToast(message: value.data['message'], state: ToastState.success);
+
       emit(AddToFavoritesSuccess());
     }).catchError((e) {
       emit(AddToFavoritesError());

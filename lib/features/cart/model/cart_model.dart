@@ -8,7 +8,7 @@ class CartModel {
   double? itemProductPriceAfterDiscount;
   int? itemProductStock;
   int? itemQuantity;
-  double? itemTotal;
+  num? itemTotal;
 
   CartModel(
       {this.itemId,

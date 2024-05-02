@@ -1,3 +1,4 @@
+import 'package:book_store/features/cart/view_model/cart_cubit/cart_cubit.dart';
 import 'package:book_store/features/favorites/view_model/favorites_cubit/favorites_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -117,7 +118,13 @@ class ProductWidget extends StatelessWidget {
                   },
                   child: Icon(Icons.favorite,),
                 ),
-                Icon(Icons.shopping_cart),
+                InkWell(
+                  onTap: () {
+                    CartCubit.get(context).addToCart(productId: product.id ?? 0);
+                  },
+                  child: Icon(Icons.shopping_cart),
+                ),
+
               ],
             ),
           )
