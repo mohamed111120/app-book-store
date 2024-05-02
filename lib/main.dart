@@ -5,6 +5,7 @@ import 'package:book_store/core/services/network/dio_helper.dart';
 import 'package:book_store/core/theme/dark_theme.dart';
 import 'package:book_store/core/theme/light_theme.dart';
 import 'package:book_store/core/theme/theme_cubit/theme_cubit.dart';
+import 'package:book_store/features/cart/view_model/cart_cubit/cart_cubit.dart';
 import 'package:book_store/features/home_layout/view/home_layout.dart';
 import 'package:book_store/features/login/view_model/login_cubit/login_cubit.dart';
 import 'package:book_store/features/register/view/register_screen.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => ProfileCubit(),),
         BlocProvider(create: (context) => BooksCubit(),),
         BlocProvider(create: (context) => FavoritesCubit(),),
+        BlocProvider(create: (context) => CartCubit(),),
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {

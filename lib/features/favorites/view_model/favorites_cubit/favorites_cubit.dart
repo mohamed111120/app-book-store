@@ -39,7 +39,6 @@ class FavoritesCubit extends Cubit<FavoritesState> {
           for(var i in value.data['data']['data'] ){
             favoritesBooks.add(ProductsDetails.fromJson(i));
           }
-          print(favoritesBooks.length);
       emit(ShowFavoritesSuccess());
     }).catchError((e) {
       if(e is DioException){

@@ -13,6 +13,7 @@ class EndPoints{
   static const String books = 'products';
   static const String wishlist = 'wishlist';
   static const String addToWishlist = 'add-to-wishlist';
+  static const String cart = 'cart';
 
 
 

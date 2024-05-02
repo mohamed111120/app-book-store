@@ -1,3 +1,4 @@
+import 'package:book_store/features/cart/view/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/books/view/books_screen.dart';
@@ -16,7 +17,7 @@ class CustomNavigationBarCubit extends Cubit<CustomNavigationBarState> {
     const HomeScreen(),
     BooksScreen(),
     FavoritesScreen(),
-    Container(),
+    CartScreen(),
     const ProfileScreen(),
   ];
 
